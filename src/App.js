@@ -1,25 +1,35 @@
-import logo from './logo.svg';
-import './App.css';
+import React from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
+import Home from './Components/Home';
+// import Book from './Components/Book';
+// import ReviewForm from './Components/ReviewFrom';
+import ReviewPage from './Components/ReviewFrom';
+// import Search from './Components/Search';
+// import BookSelf from './Components/BookSelf';
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+    const books = [
+        {
+          id: 1,
+          title: 'Book Title 1',
+          author: 'Author 1',
+          description: 'Description of Book 1',
+          image: 'https://via.placeholder.com/150',
+          reviews: []
+        },
+        // Add more book data here
+    ];
+
+    return (
+        <Router>  
+            <Routes>
+                <Route path="/" element={<Home books={books} />} />
+                {/* <Route path="/books/:id" element={<Book books={books} />} /> */}
+                <Route path="/review/:id" element={<ReviewPage />} />
+                {/* <Route path="/book" element={<ReviewForm />} /> */}
+            </Routes>
+        </Router>
+    );
 }
 
 export default App;
