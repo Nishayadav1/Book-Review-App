@@ -4,9 +4,9 @@
 I have made my Book REview App where in the front page user can search the books my Title,Books-name and Author after that when user get that books then there will be a button on every books where user can get the more details of that books
 
 ## Features
-- Search and filter books
+- Search books by author,title and name 
 - reviews
-- Rate books
+- Rating books
 
 ## Technologies Used
 - React.js
